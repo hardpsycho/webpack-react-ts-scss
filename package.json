@@ -1,0 +1,12 @@
+{
+  "name": "webpack-react-ts-scss",
+  "version": "1.0.0",
+  "description": "Bundler for a project using React, scss, typescript",
+  "main": "./src/index.ts",
+  "scripts": {
+
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
