@@ -8,7 +8,6 @@ process.env.BROWSERSLIST_CONFIG = path.resolve(__dirname, ".browserslistrc")
 
 let mode = "none"; // "production" | "development" | "none"
 
-
 if(process.env.NODE_ENV === "production") {
     mode = "production"
 } else if (process.env.NODE_ENV === "development") {

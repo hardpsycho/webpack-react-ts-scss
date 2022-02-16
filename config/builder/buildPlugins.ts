@@ -5,7 +5,9 @@ const defaultHtmlFile = "./src/index.html" // path to the html template
 
 export const builtPlugins = (mode: string): webpack.WebpackPluginInstance[] => {
     let plugins = [
-        new MiniCssExtractPlugin(),
+        new MiniCssExtractPlugin({
+            filename: mode === "production" ? "[name].[contenthash].css" : "[name].css",
+        }),
         new htmlWebpackPlugin({template: defaultHtmlFile, inject: 'body'})
     ]
 
