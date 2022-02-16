@@ -1,12 +1,13 @@
 import * as path from "path"
 import 'webpack-dev-server';
-const htmlWebpackPlugin = require("html-webpack-plugin")
 import { Configuration } from "webpack";
+import {builtPlugins} from "./builder/buildPlugins";
+import {buildRules} from "./builder/buildRules";
 
 process.env.BROWSERSLIST_CONFIG = path.resolve(__dirname, ".browserslistrc")
 
 let mode = "none"; // "production" | "development" | "none"
-const defaultHtmlFile = "./src/index.html" // path to the html template
+
 
 if(process.env.NODE_ENV === "production") {
     mode = "production"
@@ -22,26 +23,9 @@ const config: Configuration = {
         clean: true
     },
     module: {
-        rules: [
-            {
-                test: /\.html$/i,
-                use: "html-loader"
-            },
-            {
-                test: /\.(ts|js)?$/,
-                exclude: /node_modules/,
-                use: {
-                    loader: "babel-loader",
-                    options: {
-                        presets: ["@babel/preset-env", "@babel/preset-typescript"],
-                    },
-                },
-            },
-        ],
+        rules: buildRules(),
     },
-    plugins: [
-        new htmlWebpackPlugin({template: defaultHtmlFile, inject: 'body'})
-    ],
+    plugins: builtPlugins(mode),
     resolve: {
         extensions: [".ts", ".js"],
     },
