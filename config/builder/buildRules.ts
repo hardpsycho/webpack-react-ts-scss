@@ -31,6 +31,20 @@ export const buildRules = (): webpack.RuleSetRule[] => {
             ]
         },
         {
+            test: /\.(png|jpe?g|gif|svg)$/i,
+            type: 'asset/resource',
+            generator: {
+                filename: 'assets/images/[name][ext][query]'
+            }
+        },
+        {
+            test: /\.(woff|woff2|eot|ttf|otf)$/i,
+            type: 'asset/resource',
+            generator: {
+                filename: 'assets/fonts/[name][ext][query]'
+            }
+        },
+        {
             test: /\.tsx?$/,
             exclude: [/node_modules/, /build/],
             use: {
