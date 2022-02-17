@@ -1,8 +1,7 @@
-import * as path from "path"
-import 'webpack-dev-server';
+import path from "path"
 import { Configuration } from "webpack";
-import {builtPlugins} from "./builder/buildPlugins";
-import {buildRules} from "./builder/buildRules";
+import { builtPlugins } from "./builder/buildPlugins";
+import { buildRules } from "./builder/buildRules";
 
 process.env.BROWSERSLIST_CONFIG = path.resolve(__dirname, ".browserslistrc")
 
@@ -28,11 +27,6 @@ const config: Configuration = {
     resolve: {
         extensions: [".ts", ".js"],
     },
-    devServer: {
-        port: 3000,
-        hot: true,
-        open: true
-    }
 }
 
 export default config;

@@ -1,6 +1,7 @@
-import webpack = require("webpack");
-const MiniCssExtractPlugin = require("mini-css-extract-plugin")
-const htmlWebpackPlugin = require("html-webpack-plugin")
+import webpack from "webpack"
+import MiniCssExtractPlugin from "mini-css-extract-plugin"
+import htmlWebpackPlugin from "html-webpack-plugin"
+
 const defaultHtmlFile = "./src/index.html" // path to the html template
 
 export const builtPlugins = (mode: string): webpack.WebpackPluginInstance[] => {
