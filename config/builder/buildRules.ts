@@ -31,12 +31,15 @@ export const buildRules = (): webpack.RuleSetRule[] => {
             ]
         },
         {
-            test: /\.(ts|js)?$/,
+            test: /\.tsx?$/,
             exclude: [/node_modules/, /build/],
             use: {
                 loader: "babel-loader",
                 options: {
-                    presets: ["@babel/preset-env", "@babel/preset-typescript"],
+                    presets: [
+                        "@babel/preset-env",
+                        ["@babel/preset-react", {runtime: "automatic"}],
+                        "@babel/preset-typescript"],
                 },
             },
         },

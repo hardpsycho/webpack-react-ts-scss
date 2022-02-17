@@ -14,7 +14,7 @@ if(process.env.NODE_ENV === "production") {
 }
 
 const config: Configuration = {
-    entry: "./src/index.ts",
+    entry: "./src/index.tsx",
     output: {
         path: path.resolve(__dirname, "../build"),
         filename: 'index.bundle.js',
@@ -25,7 +25,7 @@ const config: Configuration = {
     },
     plugins: builtPlugins(mode),
     resolve: {
-        extensions: [".ts", ".js"],
+        extensions: [".ts", ".tsx", ".js"],
     },
 }
 
