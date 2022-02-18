@@ -11,7 +11,7 @@ export const builtPlugins = (mode: string): webpack.WebpackPluginInstance[] => {
     if(mode === "production") {
         plugins.push(new FaviconsWebpackPlugin({
             logo: './src/assets/images/favicon/favicon.png', // svg works too!
-            prefix: 'assets/images/favicons/',
+            prefix: 'assets/favicons/',
             mode: 'webapp', // optional can be 'webapp', 'light' or 'auto' - 'auto' by default
             devMode: 'webapp', // optional can be 'webapp' or 'light' - 'light' by default
             favicons: {
