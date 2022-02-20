@@ -6,7 +6,7 @@ import FaviconsWebpackPlugin from "favicons-webpack-plugin"
 const defaultHtmlFile = "./src/index.html" // path to the html template
 
 export const builtPlugins = (mode: string): webpack.WebpackPluginInstance[] => {
-    let plugins = []
+    const plugins = []
 
     if(mode === "production") {
         plugins.push(new FaviconsWebpackPlugin({
